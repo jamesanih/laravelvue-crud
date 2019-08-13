@@ -1,0 +1,105 @@
+
+    .modall-backdrop{
+        position: fixed;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modall{
+        background: #FFFFFF;
+        box-shadow: 2px 2px 20px 1px;
+        overflow-x: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modall-header{
+        border-bottom: 1px solid #eeeeee;
+        color: #4AAE9B;
+        justify-content: space-between;
+    }
+
+    .modall-footer {
+        border-top: 1px solid #eeeeee;
+        justify-content: flex-end;
+    }
+
+    .modall-body {
+        position:relative;
+        padding: 20px 10px;
+    }
+
+    .bttn-close {
+        border: none;
+        font-size: 20px;
+        padding: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        color: #4AAE9B;
+        background: transparent;
+    }
+
+    .bttn-green {
+        color: white;
+        background: #4AAE9B;
+        border: 1px solid #4AAE9B;
+        border-radius: 2px;
+    }
+
+    .modal-fade-enter,
+        .modal-fade-leave-active {
+            opacity: 0;
+        }
+
+    .modal-fade-enter-active,
+        .modal-fade-leave-active {
+             transition: opacity .5s ease
+         }
+
+
+         <div name="modal fade" id="sign-in-modal" tabindex="-1">
+           <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <header class="modal-header">
+                            <slot name="header">
+                            <h5 class="modal-title">Sign In Now</h5>
+                                <button type="button" class="close" @click="close" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </slot>
+
+                        </header>
+                        
+
+                        <section class="modal-body p-b-0">
+                            <slot name="body">
+                                I'm the default body
+                            </slot>
+
+                        </section>
+
+                        <footer class="modal-footer">
+                            <slot name="footer">
+                                I'm the default footer
+                                
+                                <button type="button" class="btn btn-primary">Sign In</button>
+                                <button type="button" class="btn btn-default" @click="close">Close me!</button>
+
+                            </slot>
+
+                        </footer>
+
+                        
+
+                        
+                    
+                        
+                    </div>
+                </div>
+       </div>
